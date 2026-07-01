@@ -87,7 +87,6 @@ class V950 extends Offsets {
   get wk_CSSFontFace_m_wrapper() { return 0x68; }
   get wk_CSSFontFace_m_status() { return 0x82; }
   get wk_CSSFontFace_m_thread() { return 0xa8; }
-
   get wk_RET() { return 0x11d0746n; }
   get wk_LEAVE_RET() { return 0x147d37n; }
   get wk_POP_R8_RET() { return 0x1e49663n; }
@@ -124,10 +123,9 @@ class V950 extends Offsets {
 
 class V951 extends V950 {
   static get version() { return "9.51" }
-  get c_strerror() { return 0x357D0n; }
 }
 
-class V960 extends V951 {
+class V960 extends V950 {
   static get version() { return "9.60"; }
 }
 
@@ -333,54 +331,6 @@ class V1102 extends Offsets {
   get c_strerror() { return 0x10d00n; }
 }
 
-class V1150 extends Offsets {
-  static get version() { return "11.50"; }
-  get wk_CSSFontFace_sizeof() { return 0xb8; }
-  get wk_CSSFontFace_m_families() { return 0x10; }
-  get wk_CSSFontFace_m_featureSettings_m_buffer() { return 0x28; }
-  get wk_CSSFontFace_m_featureSettings_m_size() { return 0x30; }
-  get wk_CSSFontFace_m_featureSettings_m_capacity() { return 0x34; }
-  get wk_CSSFontFace_m_clients() { return 0x50; }
-  get wk_CSSFontFace_m_wrapper() { return 0x0; }// todo
-  get wk_CSSFontFace_m_status() { return 0x48; }
-  get wk_CSSFontFace_m_thread() { return 0x60; }
-  get wk_RET() { return 0xe67c21n; }
-  get wk_LEAVE_RET() { return 0x1f1b53bn; }
-  get wk_POP_R8_RET() { return 0x23bb4bdn; }
-  get wk_POP_R9_RET() { return 0x1c2cda1n; }
-  get wk_POP_R10_RET() { return 0x1d09d1bn; }
-  get wk_POP_R11_RET() { return 0x12a4041n; }
-  get wk_POP_R12_RET() { return 0x222ef3bn; }
-  get wk_POP_R13_RET() { return 0x1ef72ban; }
-  get wk_POP_R14_RET() { return 0x1d5eab8n; }
-  get wk_POP_R15_RET() { return 0x16595a1n; }
-  get wk_POP_RAX_RET() { return 0x440ee5n; }
-  get wk_POP_RBP_RET() { return 0x29db5cdn; }
-  get wk_POP_RBX_RET() { return 0x23428ban; }
-  get wk_POP_RCX_RET() { return 0x22d097bn; }
-  get wk_POP_RDI_RET() { return 0x1f5a605n; }
-  get wk_POP_RDX_RET() { return 0x184fd97n; }
-  get wk_POP_RSI_RET() { return 0x265be3fn; }
-  get wk_POP_RSP_RET() { return 0x2ac57dfn; }
-  get wk_MOV_RAX_RCX_RET() { return 0x140fd86n; }
-  get wk_MOV_QWORD_PTR_RDI_RAX_RET() { return 0x211774en; }
-  get wk_MOV_RAX_QWORD_PTR_RDI_RET() { return 0x161e168n; }
-  get wk_PUSH_RAX_POP_RBP_RET() { return 0x1284321; }
-  get wk_PUSH_RAX_PUSH_RBP_RET() { return 0x0n; } // todo
-  get wk_PUSH_RBP_POP_RAX_RET() { return 0x0n; } // push rbp; rol ch, 0xfb; pop rax; ret; todo
-  get wk_POP_RAX_MOV_RAX_QWORD_PTR_RDI_JMP_QWORD_PTR_RAX_8() { return 0x0n; } //todo, no 8. but 10 at 0x70c693
-  get wk_PUSH_RBP_MOV_RBP_RSP_MOV_RAX_QWORD_PTR_RDI_CALL_QWORD_PTR_RAX_20() { return 0xd406f0n; }
-  get wk_MOV_RSI_QWORD_PTR_RAX_10_CALL_QWORD_PTR_RAX_18() { return 0x24bc149n; }
-  get wk_PUSH_RSI_JMP_QWORD_PTR_RAX() { return 0x0325291an; }
-  get wk_MOV_RDI_RSI_30_MOV_RAX_QWORD_PTR_RDI_CALL_QWORD_PTR_RAX_38() { return 0x384434n; }
-  get wk_expm1_builtin() { return 0x0n; }// todo
-  get wk___imp___error() { return 0x3CBCC98; }
-  get wk___imp_strerror() { return 0x3CBCCA8; }
-  get k__error() { return 0x183C0n; }
-  get c_strerror() { return 0x10d00n; }
-
-}
-
 
 Offsets._current = Offsets._current || undefined;
-Offsets.types = [V900, V903, V904, V950, V951, V960, V1000, V1001, V1050, V1070, V1071, V1100, V1102, V1150];
+Offsets.types = [V900, V903, V904, V950, V951, V960, V1000, V1001, V1050, V1070, V1071, V1100, V1102];
