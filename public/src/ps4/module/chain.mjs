@@ -577,10 +577,7 @@ function load_fw_specific(version) {
   } else if (0x1102 <= value && value < 0x1150) {
 		// 11.02
 	return import("../rop/ps4/1102.mjs");
-  }else if (0x1150 <= value && value < 0x1200) {
-		// 11.50, 11.52
-	return import("../rop/ps4/1150.mjs");
-	}
+  }
   
 
   throw RangeError("Firmware not supported");
