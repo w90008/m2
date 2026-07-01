@@ -123,10 +123,6 @@ const fw_config = (() => {
       // 11.02
       return fw_ps4_1102;
     }
-	else if (0x1150 <= version && version < 0x1200) {
-      // 11.50, 11.52
-      return fw_ps4_1150;
-    }
   } else {
     // TODO: PS5
   }
@@ -1571,8 +1567,8 @@ async function patch_kernel(kbase, kmem, p_ucred, restore_info) {
   if (!is_ps4) {
     throw RangeError("ps5 kernel patching unsupported");
   }
-  if (!(0x700 <= version && version < 0x1200)) {
-    // Only 7.00-11.50 supported
+  if (!(0x700 <= version && version < 0x1150)) {
+    // Only 7.00-11.02 supported
     throw RangeError("kernel patching unsupported");
   }
 
