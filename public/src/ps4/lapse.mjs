@@ -51,7 +51,7 @@ import * as fw_ps4_1000 from "./lapse/ps4/1000.mjs";
 import * as fw_ps4_10500 from "./lapse/ps4/1050.mjs";
 import * as fw_ps4_1100 from "./lapse/ps4/1100.mjs";
 import * as fw_ps4_1102 from "./lapse/ps4/1102.mjs";
-import * as fw_ps4_1150 from "./lapse/ps4/1150.mjs";
+
 const t1 = performance.now();
 
 // check if we are running on a supported firmware version
